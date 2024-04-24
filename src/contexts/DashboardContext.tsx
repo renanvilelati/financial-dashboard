@@ -1,19 +1,55 @@
-import { createContext, ReactNode, useContext } from "react";
+import { createContext, ReactNode, useContext, useState } from 'react';
+import { api } from '../services/api';
+import { iDataCard } from '../types/Cards';
 
 interface iDashboardContext {
-  texto: string
+  cards: iDataCard[];
+  loading: boolean;
+  getCards: () => void;
+  createCard: (data: iDataCard) => void;
 }
 
-export const DashboardContext = createContext( {} as iDashboardContext)
+export const DashboardContext = createContext({} as iDashboardContext);
 
-export const DashboardContextProvider = ({children}: {children: ReactNode}) => {
-  const texto = 'RENANNNN'
-  
+export const DashboardContextProvider = ({
+  children,
+}: {
+  children: ReactNode;
+}) => {
+  const [loading, setLoading] = useState(false);
+  const [cards, setCards] = useState<iDataCard[]>([]);
+
+
+  const getCards = async () => {
+    try {
+      setLoading(true);
+      const res = await api.get('cards')
+      setCards(res.data);      
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const createCard = async (data: iDataCard) => {
+    try {
+      setLoading(true);
+      const res = await api.post('cards', data)
+      console.log(res.data);
+      getCards()      
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <DashboardContext.Provider value={{texto}}>
+    <DashboardContext.Provider value={{ cards, loading, getCards, createCard }}>
       {children}
     </DashboardContext.Provider>
-  )
-}
+  );
+};
 
-export const useDashboardContext = () => useContext(DashboardContext)
+export const useDashboardContext = () => useContext(DashboardContext);
