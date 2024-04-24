@@ -35,8 +35,7 @@ export const DashboardContextProvider = ({
   const createCard = async (data: iDataCard) => {
     try {
       setLoading(true);
-      const res = await api.post('cards', data)
-      console.log(res.data);
+      await api.post('cards', data)
       getCards()      
     } catch (error) {
       console.error(error);

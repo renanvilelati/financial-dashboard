@@ -6,17 +6,15 @@ import MasterCard from '../../../../assets/images/MasterCard.svg';
 import { useDashboardContext } from '../../../../contexts/DashboardContext';
 import { iDataCard } from '../../../../types/Cards';
 import FormNewCard from './Form';
+import Modal from '../../../../components/Modal';
+import { useState } from 'react';
 
 const Card = ({ showPassword }: { showPassword: boolean }) => {
   const { cards } = useDashboardContext();
-
-
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <StyledCardList>
-
-      <FormNewCard />
-
       {cards &&
         cards.length > 0 &&
         cards.map((item: iDataCard) => (
@@ -35,12 +33,11 @@ const Card = ({ showPassword }: { showPassword: boolean }) => {
               <div className="user-info">
                 <span>{item.userName}</span>
                 <PatternFormat
-                type='text'
-                mask='_'
-
-                value={item.password}
-                displayType='text'
-                patternChar='#'
+                  type="text"
+                  mask="_"
+                  value={item.password}
+                  displayType="text"
+                  patternChar="#"
                   format="#### #### #### ####"
                   renderText={(formattedValue) => {
                     return (
@@ -55,8 +52,13 @@ const Card = ({ showPassword }: { showPassword: boolean }) => {
             </div>
           </StyledCard>
         ))}
-      <StyledEmptyCard>+</StyledEmptyCard>
-    </StyledCardList>
+      <StyledEmptyCard onClick={() => setIsOpen(true)}>+</StyledEmptyCard>
+
+      <Modal isOpen={isOpen} closeModal={ () => setIsOpen(!isOpen)}>
+        <FormNewCard closeModal={ () => setIsOpen(!isOpen)}/>
+      </Modal>
+
+    </StyledCardList >
   );
 };
 

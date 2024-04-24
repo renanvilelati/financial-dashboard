@@ -13,20 +13,6 @@
       "userName": "Renan Vilela",
       "password": "2215 1471 2114 3221",
       "validate": "2024-07-24T23:47:55.991Z"
-    },
-    {
-      "id": "e23f",
-      "type": "credit",
-      "userName": "dsasdadas",
-      "password": "5555555555555555",
-      "validate": "2024-04-11"
-    },
-    {
-      "id": "e53a",
-      "type": "debit",
-      "userName": "Marcelo",
-      "password": "5555555551111111",
-      "validate": "2028-05-20"
     }
   ]
 }
