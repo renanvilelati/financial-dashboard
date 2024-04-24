@@ -11,7 +11,7 @@ export const StyledAside = styled.aside<iStyledAsideProps>`
   align-items: center;
   flex-direction: column;
   z-index: 2;
-  /* transform: translateY(-100%); */
+  background-color:  ${({theme}) => theme.colors.background};;
 
   .show {
     transform: translateY(0);
@@ -49,7 +49,7 @@ export const StyledAside = styled.aside<iStyledAsideProps>`
         align-items: center;
         gap: 1rem;
         color: ${({theme}) => theme.colors.white};
-        padding-left: ${({ sidebarIsOpen }) => (sidebarIsOpen ? 6 : 3)}rem;
+        padding-left: ${({ sidebarIsOpen }) => (sidebarIsOpen ? 5 : 2.2)}rem;
       }
 
       &:hover::after {

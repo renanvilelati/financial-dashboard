@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const StyledNavigation = styled.div`
   padding: 3rem;
-  margin: 0 2rem;
+  /* margin: 0 2rem; */
   border-radius: 0.5rem;
   border: 1px solid ${({theme}) => theme.colors.border};
   margin-bottom: 3rem;
