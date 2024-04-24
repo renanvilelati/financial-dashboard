@@ -1,4 +1,3 @@
-'use client';
 import { AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai';
 import { StyledCards } from './style';
 import { useState } from 'react';
