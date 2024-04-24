@@ -7,6 +7,7 @@ import { GlobalStyle } from "./styles/global";
 import { useState } from "react";
 import { darkTheme, lightTheme } from "./styles/theme";
 import Dashboard from "./pages/dashboard/page";
+import { AppRouter } from "./router";
 
 function App() {
   const [isLightTheme, setIsLightTheme] = useState(false);
@@ -20,7 +21,7 @@ function App() {
             isLightTheme={isLightTheme}
             setIsLightTheme={setIsLightTheme}
           />
-          <Dashboard />
+          <AppRouter />
         </Container>
         <GlobalStyle />
       </GlobalProvider>
