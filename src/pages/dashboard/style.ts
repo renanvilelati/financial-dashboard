@@ -1,5 +1,6 @@
 'use client';
 import styled from 'styled-components';
+import { breakpoints } from '../../constants/breakpoints';
 
 export const StyledDashboard = styled.main`
   margin-bottom: 3rem;
@@ -13,7 +14,7 @@ export const StyledDashboard = styled.main`
     gap: 1.5rem;
   }
 
-  @media (max-width: 1024px) {
+  @media ${breakpoints.md} {
     .footer-charts {
       flex-direction: column;
     }

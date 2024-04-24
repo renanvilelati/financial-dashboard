@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { breakpoints } from '../constants/breakpoints';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -43,7 +44,7 @@ h3 {
   font-weight: 600 !important;
 }
 
-@media (max-width: 990px) {
+@media ${breakpoints.md} {
   h3 {
     font-size: 1rem !important;
     font-weight: 600;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from '../../../../../constants/breakpoints';
 
 export const StyledMonthlyExpensesChart = styled.div`
   width: 50%;
@@ -42,7 +43,7 @@ export const StyledMonthlyExpensesChart = styled.div`
     color: ${({ theme }) => theme.colors.gray};
   }
   
-  @media (max-width: 1024px) {
+  @media ${breakpoints.md} {
 
     .recharts-responsive-container {
       position: relative;

@@ -1,5 +1,6 @@
 'use client';
 import styled from 'styled-components';
+import { breakpoints } from '../../constants/breakpoints';
 
 interface iStyledContainerProps {
   sidebarIsOpen: boolean;
@@ -35,7 +36,7 @@ export const StyledContainer = styled.div<iStyledContainerProps>`
     background-color: ${({theme}) => theme.colors.background};
   }
 
-  @media (max-width: 1024px) {
+  @media ${breakpoints.md} {
     grid-template-rows: 100px 1fr;
     grid-template-columns: 1fr;
     grid-template-areas:

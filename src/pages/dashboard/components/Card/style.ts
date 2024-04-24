@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from '../../../../constants/breakpoints';
 
 export const StyledCard = styled.div`
   width: 288px;
@@ -39,11 +40,11 @@ export const StyledCard = styled.div`
     justify-content: space-between;
   }
 
-  @media (max-width: 1024px) {
+  @media ${breakpoints.md} {
     width: 40%;
   }
 
-  @media (max-width: 640px) {
+  @media ${breakpoints.sm} {
     width: 100%;
   }
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from '../../constants/breakpoints';
 
 export const StyledCards = styled.div`
 
@@ -23,7 +24,7 @@ export const StyledCards = styled.div`
     }
   }
 
-  @media (max-width: 1024px) {
+  @media ${breakpoints.md} {
     width: 100%;
   }
   `;
@@ -33,12 +34,12 @@ export const StyledCardList = styled.div`
   gap: 2rem;
   flex-wrap: wrap;
   
-  @media (max-width: 1024px) {
+  @media ${breakpoints.md} {
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  @media (max-width: 640px) {
+  @media ${breakpoints.sm} {
     flex-direction: column;
   }
 `;

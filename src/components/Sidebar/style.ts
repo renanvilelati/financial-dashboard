@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from '../../constants/breakpoints';
 
 interface iStyledAsideProps {
   sidebarIsOpen: boolean;
@@ -70,7 +71,7 @@ export const StyledAside = styled.aside<iStyledAsideProps>`
     }
   }
 
-  @media (max-width: 990px) {
+  @media ${breakpoints.md} {
     margin-top: 4rem;
     height: 100vh;
     background-color: ${({theme}) => theme.colors.black};

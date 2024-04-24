@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from '../../../../../constants/breakpoints';
 
 export const StyledMySalesChart = styled.div`
   span {
@@ -22,7 +23,7 @@ export const StyledMySalesChart = styled.div`
     height: 100%;
   }
 
-  @media (max-width: 1024px) {
+  @media ${breakpoints.md} {
     width: 100%;
   }
 `;

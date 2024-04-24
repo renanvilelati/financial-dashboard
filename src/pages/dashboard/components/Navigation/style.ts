@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { breakpoints } from '../../../../constants/breakpoints';
 
 export const StyledNavigation = styled.div`
   padding: 3rem;
@@ -137,7 +138,7 @@ export const StyledPaymentItem = styled.li<iStyledPaymentItem>`
     }};
   }
 
-  @media (max-width: 1024px) {
+  @media ${breakpoints.md} {
     h3 {
       font-size: 1rem;
     }

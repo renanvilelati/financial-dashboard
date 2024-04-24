@@ -1,5 +1,6 @@
 'use client';
 import styled from 'styled-components';
+import { breakpoints } from '../../constants/breakpoints';
 
 export const StyledHeader = styled.header`
   height: 100%;
@@ -131,7 +132,7 @@ export const StyledHeader = styled.header`
     }
   }
 
-  @media (max-width: 1024px) {
+  @media ${breakpoints.md} {
     gap: 0.5rem;
     width: 100vw;
     padding: 0 2rem;
