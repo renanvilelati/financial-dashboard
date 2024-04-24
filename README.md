@@ -1,30 +1,55 @@
-# React + TypeScript + Vite
+<h1 align="center">
+    <img src="https://ik.imagekit.io/dzojbyqyz/cover.png?updatedAt=1713803120525">
+   
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Link to the app
 
-Currently, two official plugins are available:
+[Financial Dashboard](https://financial-dashboard-pi-seven.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🔍 Summary
 
-## Expanding the ESLint configuration
+- [About](#-sobre)
+- [Tech Stack](#-tecnologias-utilizadas)
+- [How to download](#-como-baixar-o-projeto)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 📗 About
 
-- Configure the top-level `parserOptions` property like this:
+The project consists of listing the films being shown at the cinema and allows the user to save their favorite films.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+---
+
+## 👨‍🚀 Next Updates
+
+- Allow mobile menu
+- Create horizontal scroll from card session
+
+---
+
+## 🚀 Technologies used
+
+The project was developed using the following technologies
+
+- [ReactJS](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
+
+---
+
+## 🎮 How to download
+
+```bash
+
+    # Clone the repository
+    $ git clone https://github.com/renanvilelati/financial-dashboard
+
+    # Install the dependencies
+    $ yarn
+
+    # Started the project
+    $ yarn dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+---
+
+Developed by 🐻 por Renan Vilela
