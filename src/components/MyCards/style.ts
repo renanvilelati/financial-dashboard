@@ -31,10 +31,10 @@ export const StyledCards = styled.div`
 export const StyledCardList = styled.div`
   display: flex;
   gap: 2rem;
-  justify-content: center;
   flex-wrap: wrap;
   
   @media (max-width: 1024px) {
+    justify-content: center;
     flex-wrap: wrap;
   }
 
