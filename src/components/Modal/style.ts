@@ -29,6 +29,10 @@ export const StyledModal = styled.div`
     padding: 1rem 0;
   }
 
+  .header button {
+    position: initial;
+  }
+
   form {
     width: 500px;
 
@@ -77,6 +81,7 @@ export const StyledModal = styled.div`
       background-color: ${({ theme }) => theme.colors.primary};
       border-radius: 8px;
       font-size: 1rem;
+      position: initial;
     }
     
     button:hover {
