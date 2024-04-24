@@ -7,6 +7,7 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   z-index: 3;
+  padding-left: 2rem;
 
   .input-wrapper {
     width: 100%;
