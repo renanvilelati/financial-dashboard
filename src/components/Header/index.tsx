@@ -1,4 +1,3 @@
-'use client';
 import { BiSearch, BiSun } from 'react-icons/bi';
 import { MdNotificationsNone } from 'react-icons/md';
 import { StyledHeader } from './style';
