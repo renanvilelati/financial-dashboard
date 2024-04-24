@@ -24,6 +24,40 @@ export const StyledCards = styled.div`
     }
   }
 
+  form {
+    width: 500px;
+    background-color: #333;
+    padding: 2rem;
+    
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+
+    input, select {
+      padding: 0.5rem 2rem;
+      border-radius: 8px;
+      background: transparent;
+      color: #FFF;
+      border: 1px solid ${({theme}) => theme.colors.border};
+      &::placeholder {
+        color: ${({theme}) => theme.colors.gray};
+      }
+    }
+
+    option {
+      background-color: #222;
+    }
+
+    button {
+      width: 100%;
+      background-color: #222;
+      border-radius: 8px;
+    }
+  }
+
   @media ${breakpoints.md} {
     width: 100%;
   }
