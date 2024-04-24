@@ -11,16 +11,14 @@ const MyCards = () => {
     <StyledCards>
       <div className="my-cards-header">
         <h3>My cards</h3>
-        <button>
+        <button onClick={() => setShowPassword(!showPassword)}>
           {showPassword ? (
             <AiOutlineEyeInvisible
-              size={20}
-              onClick={() => setShowPassword(!showPassword)}
+              size={20}              
             />
           ) : (
             <AiOutlineEye
               size={20}
-              onClick={() => setShowPassword(!showPassword)}
             />
           )}
         </button>
