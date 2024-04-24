@@ -1,3 +1,5 @@
+import { iDataCard } from "../../types/Cards";
+
 export interface iDataPendingPayments {
   id: number;
   name: string;
@@ -98,13 +100,7 @@ export const dataMonthlyExpenses: iDataMonthlyExpenses[] = [
   },
 ];
 
-interface iDataCard {
-  id: string | number;
-  type: string;
-  userName: string;
-  password: string;
-  validate: string;
-}
+
 
 export const dataCard: iDataCard[] = [
   {

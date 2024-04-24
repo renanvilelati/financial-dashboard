@@ -1,4 +1,3 @@
-'use client';
 import Logo from '../../../public/logo.svg';
 import { useGlobalContext } from '../../contexts/GlobalContext';
 import { dataMenu } from '../../mock/menu';
@@ -21,14 +20,18 @@ const Sidebar = () => {
 
       <nav>
         <ul className='test'>
-          {dataMenu.map((item) => (
-            <li key={item.id}>
-              <a href={`/${item.href}`}>
-                {createSidebarMenu(item.label)}
-                {sidebarIsOpen ? item.label : null}
-              </a>
-            </li>
-          ))}
+          {dataMenu.map((item) => {
+            
+
+            return (
+              <li key={item.id}>
+                <a href={`/${item.href}`}>
+                  {createSidebarMenu(item.label)}
+                  {sidebarIsOpen ? item.label : null}
+                </a>
+              </li>
+            )
+          } )}
         </ul>
       </nav>
     </StyledAside>
