@@ -31,6 +31,13 @@ export const StyledModal = styled.div`
 
   .header button {
     position: initial;
+    background: transparent;
+    color: ${({ theme }) => theme.colors.white};
+    padding: 1rem;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.primary};
+    }
   }
 
   form {
@@ -76,17 +83,19 @@ export const StyledModal = styled.div`
 
     button {
       width: 100%;
+      padding: 0.7rem 2rem;
       font-weight: 500;
       color: ${({ theme }) => theme.colors.white};
       background-color: ${({ theme }) => theme.colors.primary};
       border-radius: 8px;
       font-size: 1rem;
       position: initial;
+      transition: all 0.4s;
+      &:hover {
+        transform: translateY(-2px);
+      }
     }
-    
-    button:hover {
-      color: ${({ theme }) => theme.colors.white};
-    }
+
   }
 
   @media ${breakpoints.sm} {
