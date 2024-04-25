@@ -75,8 +75,7 @@ export const StyledCardList = styled.div`
   gap: 1.5rem;
   overflow-x: scroll;
   justify-content: flex-start;
-  padding-bottom: 0.5rem;
-  /* flex-wrap: wrap; */
+  padding: 1rem 0 0.5rem;
 
   &::-webkit-scrollbar {
     height: 5px;
@@ -91,12 +90,9 @@ export const StyledCardList = styled.div`
   }
 
   @media ${breakpoints.md} {
-    /* justify-content: center; */
-    /* flex-wrap: wrap; */
     padding: 0.1rem 0 0.5rem 0.1rem;
   }
 
   @media ${breakpoints.sm} {
-    /* flex-direction: column; */
   }
 `;
