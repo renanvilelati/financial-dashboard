@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { breakpoints } from '../../../../constants/breakpoints';
 
 export const StyledCard = styled.div`
-  width: 288px;
+  min-width: 288px;
   height: 179px;
   border-radius: 1rem;
   padding: 1.5rem 1.5rem 1rem 1.5rem;
@@ -15,7 +15,7 @@ export const StyledCard = styled.div`
   border: 1px solid ${({theme}) => theme.colors.border};
 
   &:hover {
-    outline: 1px solid ${({theme}) => theme.colors.primary};
+    border: 1px solid ${({theme}) => theme.colors.primary};
     transform: translateY(-10px);
   }
 
@@ -45,11 +45,15 @@ export const StyledCard = styled.div`
   }
 
   @media ${breakpoints.md} {
-    width: 40%;
+    /* width: 40%; */
+    /* min-width: 288px; */
   }
 
   @media ${breakpoints.sm} {
-    width: 100%;
+    /* width: 100%; */
+    &:hover {
+    transform: initial;
+  }
   }
 
 `;
