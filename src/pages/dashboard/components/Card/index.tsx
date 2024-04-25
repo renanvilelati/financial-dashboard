@@ -7,11 +7,10 @@ import { useDashboardContext } from '../../../../contexts/DashboardContext';
 import { iDataCard } from '../../../../types/Cards';
 import FormNewCard from './Form';
 import Modal from '../../../../components/Modal';
-import { useState } from 'react';
 
 const Card = ({ showPassword }: { showPassword: boolean }) => {
-  const { cards } = useDashboardContext();
-  const [isOpen, setIsOpen] = useState(false);
+  const { cards, isOpen, handleShowModal } = useDashboardContext();
+  // const [isOpen, setIsOpen] = useState(false);
 
   return (
     <StyledCardList>
@@ -52,11 +51,11 @@ const Card = ({ showPassword }: { showPassword: boolean }) => {
             </div>
           </StyledCard>
         ))}
-        {cards.length < 4 && <StyledEmptyCard onClick={() => setIsOpen(true)}>+</StyledEmptyCard>}
+        {cards.length < 4 && <StyledEmptyCard onClick={handleShowModal}>+</StyledEmptyCard>}
       
 
-      <Modal isOpen={isOpen} closeModal={ () => setIsOpen(!isOpen)}>
-        <FormNewCard closeModal={ () => setIsOpen(!isOpen)}/>
+      <Modal isOpen={isOpen} closeModal={handleShowModal}>
+        <FormNewCard closeModal={handleShowModal}/>
       </Modal>
 
     </StyledCardList >

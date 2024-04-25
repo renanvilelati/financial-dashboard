@@ -7,6 +7,8 @@ interface iDashboardContext {
   loading: boolean;
   getCards: () => void;
   createCard: (data: iDataCard) => void;
+  handleShowModal: () => void;
+  isOpen: boolean
 }
 
 export const DashboardContext = createContext({} as iDashboardContext);
@@ -17,7 +19,12 @@ export const DashboardContextProvider = ({
   children: ReactNode;
 }) => {
   const [loading, setLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [cards, setCards] = useState<iDataCard[]>([]);
+
+  const handleShowModal = () => {
+    setIsOpen(!isOpen)
+  }
 
   const getCards =  () => {
     try {
@@ -77,7 +84,7 @@ export const DashboardContextProvider = ({
   }, [])
 
   return (
-    <DashboardContext.Provider value={{ cards, loading, getCards, createCard }}>
+    <DashboardContext.Provider value={{ cards, loading, getCards, createCard, isOpen, handleShowModal }}>
       {children}
     </DashboardContext.Provider>
   );

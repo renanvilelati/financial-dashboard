@@ -6,7 +6,9 @@ import { useDashboardContext } from '../../contexts/DashboardContext';
 
 const MyCards = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { getCards, cards } = useDashboardContext();
+  
+  const { getCards, cards, handleShowModal } = useDashboardContext();
+  
 
   useEffect(() => {
     getCards();
@@ -28,7 +30,7 @@ const MyCards = () => {
             )}
           </button>
         </div>
-        {cards.length >= 4 && <button className='btn-new-card'><AiOutlinePlus size={16} />New card</button>}
+        {cards.length >= 4 && <button className='btn-new-card' onClick={handleShowModal}><AiOutlinePlus size={16} />New card</button>}
         
       </div>
 
