@@ -52,7 +52,8 @@ const Card = ({ showPassword }: { showPassword: boolean }) => {
             </div>
           </StyledCard>
         ))}
-      <StyledEmptyCard onClick={() => setIsOpen(true)}>+</StyledEmptyCard>
+        {cards.length < 4 && <StyledEmptyCard onClick={() => setIsOpen(true)}>+</StyledEmptyCard>}
+      
 
       <Modal isOpen={isOpen} closeModal={ () => setIsOpen(!isOpen)}>
         <FormNewCard closeModal={ () => setIsOpen(!isOpen)}/>

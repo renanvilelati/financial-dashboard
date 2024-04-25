@@ -69,6 +69,34 @@ export const DashboardContextProvider = ({
         password: '2215 1471 2114 3221',
         validate: '2024-07-24T23:47:55.991Z',
       },
+      {
+        id: 1,
+        type: 'Credit',
+        userName: 'Renan Vilela',
+        password: '1715 2154 1471 2114',
+        validate: '2024-05-30T23:47:55.991Z',
+      },
+      {
+        id: 2,
+        type: 'Debit',
+        userName: 'Renan Vilela',
+        password: '2215 1471 2114 3221',
+        validate: '2024-07-24T23:47:55.991Z',
+      },
+      {
+        id: 1,
+        type: 'Credit',
+        userName: 'Renan Vilela',
+        password: '1715 2154 1471 2114',
+        validate: '2024-05-30T23:47:55.991Z',
+      },
+      {
+        id: 2,
+        type: 'Debit',
+        userName: 'Renan Vilela',
+        password: '2215 1471 2114 3221',
+        validate: '2024-07-24T23:47:55.991Z',
+      },
     ]
 
     localStorage.setItem('cards', JSON.stringify(InitialData));
