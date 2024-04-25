@@ -7,11 +7,11 @@ export const StyledCards = styled.div`
     padding: 1.5rem 0 0;
   }
 
-  .my-cards-header  {
+  .my-cards-header {
     display: flex;
     justify-content: space-between;
   }
-  
+
   .my-cards-header div {
     display: flex;
     justify-content: space-between;
@@ -44,7 +44,27 @@ export const StyledCards = styled.div`
 
   .title-wrapper span {
     font-size: 0.875rem;
+    display: flex;
     color: ${({ theme }) => theme.colors.gray};
+  }
+
+  @keyframes moveRight1 {
+    0% {
+      transform: translateX(0) scaleX(0.2);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateX(50%) scaleX(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%) scaleX(0.2);
+      opacity: 0.2;
+    }
+  }
+
+  .arrow {
+    animation: moveRight1 3s infinite;
   }
 
   button.btn-show-password {
