@@ -13,8 +13,8 @@ const Modal = ({isOpen, children, closeModal}: iModal) => {
 
     return (
       <StyledModal>
-        <div className="background" >
-          <div className="content">
+        <div onClick={closeModal} className="background" >
+          <div onClick={(e) => e.stopPropagation()} className="content">
           <div className="header">
             <button onClick={closeModal}>{<MdClose size={24} />}</button>
           </div>
