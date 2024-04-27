@@ -44,13 +44,7 @@ export const StyledCard = styled.div`
     justify-content: space-between;
   }
 
-  @media ${breakpoints.md} {
-    /* width: 40%; */
-    /* min-width: 288px; */
-  }
-
   @media ${breakpoints.sm} {
-    /* width: 100%; */
     &:hover {
     transform: initial;
   }

@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { breakpoints } from '../../constants/breakpoints';
 
-export const StyledModal = styled.div`
+interface iStyledModal {
+  isDarkTheme: boolean;
+}
+
+export const StyledModal = styled.div<iStyledModal>`
   .background {
     position: fixed;
     inset: 0 0 0 0;
@@ -64,15 +68,22 @@ export const StyledModal = styled.div`
       font-size: 1rem;
       border-radius: 8px;
       background: transparent;
-      color: #fff;
       border: 1px solid ${({ theme }) => theme.colors.border};
       &::placeholder {
         color: ${({ theme }) => theme.colors.gray};
       }
     }
 
+    select {
+      color: #FFF;
+    }
+
+    input {
+      color: ${({ theme }) => theme.colors.white};
+    }
+
     ::-webkit-calendar-picker-indicator {
-      filter: invert(1);
+      filter: ${({ isDarkTheme }) => (isDarkTheme ? 'invert(1)' : 'initial')};
     }
 
     option {
@@ -85,7 +96,7 @@ export const StyledModal = styled.div`
       width: 100%;
       padding: 0.7rem 2rem;
       font-weight: 500;
-      color: ${({ theme }) => theme.colors.white};
+      color: #FFF;
       background-color: ${({ theme }) => theme.colors.primary};
       border-radius: 8px;
       font-size: 1rem;
@@ -95,7 +106,6 @@ export const StyledModal = styled.div`
         transform: translateY(-2px);
       }
     }
-
   }
 
   @media ${breakpoints.sm} {

@@ -1,4 +1,5 @@
 interface iTheme {
+  type: string
   colors: {
     primary: string;
     secondary: string;
@@ -15,6 +16,7 @@ interface iTheme {
 }
 
 export const darkTheme: iTheme = {
+  type: 'dark',
   colors: {
     primary: '#864CFF',
     secondary: '#41FFC6',
@@ -31,6 +33,7 @@ export const darkTheme: iTheme = {
 };
 
 export const lightTheme: iTheme = {
+  type: 'light',
   colors: {
     primary: '#864CFF',
     secondary: '#2CC798',
