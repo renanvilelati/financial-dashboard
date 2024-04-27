@@ -1,4 +1,3 @@
-'use client';
 import {
   Area,
   AreaChart,
@@ -11,12 +10,16 @@ import {
 import { StyledMyBalanceChart } from './style';
 import { useTheme } from 'styled-components';
 import { dataMyBlance } from '../../../../../mock/dashboard';
+import { useDashboardContext } from '../../../../../contexts/DashboardContext';
+import SkeletonCharts from '../../../../../components/Skeleton/components/SkeletonCharts';
 
 const MyBalanceChart = () => {
+  const { loading } = useDashboardContext();
+  const theme = useTheme();
 
-  const theme = useTheme()
-
-  return (
+  return loading ? (
+    <SkeletonCharts />
+  ) : (
     <StyledMyBalanceChart>
       <div className="header">
         <h3>My Balance</h3>
@@ -62,7 +65,6 @@ const MyBalanceChart = () => {
             />{' '}
             <Tooltip
               contentStyle={{
-                
                 backgroundColor: theme.colors.toolTipBackground,
                 borderRadius: '8px',
                 border: `1px solid theme.colors.toolTipBorder}`,

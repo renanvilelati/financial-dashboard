@@ -24,11 +24,20 @@ const MyCards = () => {
         <div>
           <div className="title-wrapper">
             <h3>My cards</h3>
-            {cards.length > 0 && (
-              <span>
-                {cards.length} cards registered
+            {cards.length > 0 ? (
+              cards.length === 1 ? (
+                <span>
+                  {cards.length} card registered
                   <MdKeyboardArrowRight className="arrow" size={16} />
-              </span>
+                </span>
+              ) : (
+                <span>
+                  {cards.length} cards registered
+                  <MdKeyboardArrowRight className="arrow" size={16} />
+                </span>
+              )
+            ) : (
+              <span>No cards registered</span>
             )}
           </div>
           <button

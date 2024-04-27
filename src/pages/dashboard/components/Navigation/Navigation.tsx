@@ -8,7 +8,12 @@ import medicalIcon from '../../../../assets/icons/medical-icon.svg';
 import veterinaryIcon from '../../../../assets/icons/veterinary-icon.svg';
 import { currentFormat } from '../../../../utils/currencyFormat';
 import { dateFormatTimeAgo } from '../../../../utils/DateFormat';
-import { dataPendingPayments, iDataPendingPayments } from '../../../../mock/dashboard';
+import {
+  dataPendingPayments,
+  iDataPendingPayments,
+} from '../../../../mock/dashboard';
+import { useDashboardContext } from '../../../../contexts/DashboardContext';
+import SkeletonNavigation from '../../../../components/Skeleton/SkeletonNavigation';
 
 const getIcon = (type: string) => {
   switch (type) {
@@ -41,12 +46,7 @@ const getIcon = (type: string) => {
       );
     case 'medical':
       return (
-        <img
-          src={medicalIcon}
-          alt="Ícone de Medicina"
-          width={24}
-          height={24}
-        />
+        <img src={medicalIcon} alt="Ícone de Medicina" width={24} height={24} />
       );
     case 'furniture':
       return (
@@ -139,7 +139,11 @@ const RecentTransactions = () => {
 };
 
 const Navigation = () => {
-  return (
+  const { loading } = useDashboardContext();
+
+  return loading ? (
+    <SkeletonNavigation width='100%' height='90%' />
+  ) : (
     <StyledNavigation className="navigation">
       <div className="pending-payments">
         <div className="header">
