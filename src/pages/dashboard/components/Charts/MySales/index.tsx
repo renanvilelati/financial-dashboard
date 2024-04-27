@@ -1,12 +1,16 @@
-'use client';
 import { useTheme } from 'styled-components';
 import { StyledMySalesChart } from './style';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import SkeletonCharts from '../../../../../components/Skeleton/components/SkeletonCharts';
+import { useDashboardContext } from '../../../../../contexts/DashboardContext';
 
 const MySalesChart = () => {
   const theme = useTheme();
+  const { loading } = useDashboardContext();
 
-  return (
+  return loading ? (
+    <SkeletonCharts type='circle' />
+  ) : (
     <StyledMySalesChart>
       <h3>Sales</h3>
       <div className="chart">

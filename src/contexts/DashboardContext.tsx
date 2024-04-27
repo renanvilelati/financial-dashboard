@@ -26,9 +26,11 @@ export const DashboardContextProvider = ({
     setIsOpen(!isOpen)
   }
 
-  const getCards =  () => {
+  const getCards =  async () => {
     try {
+      // Vou utilizar o mesmo loading em todos os skeletons apenas para simular
       setLoading(true);
+      await new Promise( resolve => setTimeout( resolve, 1500))
       // const res = await api.get('cards')
       // setCards(res.data);
 

@@ -1,14 +1,17 @@
 import { Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { StyledMonthlyExpensesChart } from './style';
 import { dataMonthlyExpenses } from '../../../../../mock/dashboard';
+import { useDashboardContext } from '../../../../../contexts/DashboardContext';
+import SkeletonCharts from '../../../../../components/Skeleton/components/SkeletonCharts';
 
 const MonthlyExpensesChart = () => {
+  const { loading } = useDashboardContext();
 
   const renderLegend = () => {
     return (
       <ul>
         {dataMonthlyExpenses.map((entry, index) => (
-          <li key={`item-${index}`} >
+          <li key={`item-${index}`}>
             <div>
               <span
                 className="legend-icon"
@@ -23,7 +26,9 @@ const MonthlyExpensesChart = () => {
     );
   };
 
-  return (
+  return loading ? (
+    <SkeletonCharts type='circle' />
+  ) : (
     <StyledMonthlyExpensesChart>
       <h3>Monthly Expenses</h3>
 
@@ -36,7 +41,7 @@ const MonthlyExpensesChart = () => {
                 borderRadius: '8px',
                 border: 0,
                 backdropFilter: 'blur(3px)',
-                textTransform: 'capitalize'
+                textTransform: 'capitalize',
               }}
               itemStyle={{
                 color: '#FFF',
@@ -44,14 +49,10 @@ const MonthlyExpensesChart = () => {
                 border: '1px solid #373755',
                 borderRadius: '8px',
                 padding: '0.5rem 0',
-                textAlign: 'center'
+                textAlign: 'center',
               }}
             />
-            <Legend
-              layout="radial"
-              height={140}
-              content={renderLegend}
-            />
+            <Legend layout="radial" height={140} content={renderLegend} />
             <Pie
               data={dataMonthlyExpenses}
               dataKey="value"
