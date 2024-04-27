@@ -51,6 +51,7 @@ export const StyledSkeleton = styled.div`
     background: linear-gradient(90deg, #222, #444, #222);
     background-size: 200%;
     animation: pulse 1s infinite linear;
+    border-radius: 16px;
   }
 
   &.circle::before {
