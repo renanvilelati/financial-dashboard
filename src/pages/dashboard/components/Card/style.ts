@@ -10,13 +10,29 @@ export const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: transform ease-in-out 0.4s;
   border: 1px solid ${({theme}) => theme.colors.border};
+  position: relative;
+
+  &:hover .actions {
+    display: flex;
+  }
 
   &:hover {
     border: 1px solid ${({theme}) => theme.colors.primary};
     transform: translateY(-10px);
+
+    ::before {
+      content: '';
+      inset: 0;
+      background-color: #24202714;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 1rem;
+      z-index: 1;
+    }
   }
 
   .user-info {

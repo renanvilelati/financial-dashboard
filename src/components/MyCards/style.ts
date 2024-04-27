@@ -97,6 +97,28 @@ export const StyledCardList = styled.div`
   justify-content: flex-start;
   padding: 1rem 0 0.5rem;
 
+  .actions {
+    display: none;
+    gap: 1rem;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    button {
+      background: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.white};
+      width: 3rem;
+      height: 3rem;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+  }
+
   &::-webkit-scrollbar {
     height: 5px;
   }

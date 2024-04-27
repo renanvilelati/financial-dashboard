@@ -8,13 +8,18 @@ import { iDataCard } from '../../../../types/Cards';
 import FormNewCard from './Form';
 import Modal from '../../../../components/Modal';
 import SkeletonCard from '../../../../components/Skeleton/components/SkeletonCard';
+import { FaRegTrashAlt } from 'react-icons/fa';
 
 const Card = ({ showPassword }: { showPassword: boolean }) => {
-  const { cards, isOpen, loading, handleShowModal } = useDashboardContext();
+  const { cards, isOpen, loading, handleShowModal, removeCard } =
+    useDashboardContext();
+
+  const handleRemoveCard = (id: string) => {
+    removeCard(id);
+  };
 
   return (
     <StyledCardList>
-
       {loading
         ? [...Array(2).keys()].map((i, index) => (
             <SkeletonCard key={index} width="288px" height="179px" />
@@ -23,6 +28,14 @@ const Card = ({ showPassword }: { showPassword: boolean }) => {
           cards.length > 0 &&
           cards.map((item: iDataCard) => (
             <StyledCard key={item.id}>
+              <div className="actions">
+                <button
+                  onClick={() => handleRemoveCard(item.id as string)}
+                  className="btnRemoveCard"
+                >
+                  <FaRegTrashAlt size={24} />
+                </button>
+              </div>
               <div className="card-header">
                 <span>{item.type}</span>
                 <img
