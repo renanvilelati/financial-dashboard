@@ -1,4 +1,4 @@
-import { BiSearch, BiSun } from 'react-icons/bi';
+import { BiSearch, BiSun, BiMoon } from 'react-icons/bi';
 import { MdNotificationsNone } from 'react-icons/md';
 import { StyledHeader } from './style';
 import React, { Dispatch } from 'react';
@@ -9,7 +9,6 @@ interface iHeader {
   setIsLightTheme: Dispatch<React.SetStateAction<boolean>>;
 }
 const Header = ({ isLightTheme, setIsLightTheme }: iHeader) => {
-
   return (
     <StyledHeader>
       <div className="header-left">
@@ -25,7 +24,11 @@ const Header = ({ isLightTheme, setIsLightTheme }: iHeader) => {
 
       <div className="header-right">
         <button>
-          <BiSun size={24} onClick={() => setIsLightTheme(!isLightTheme)} />
+          {isLightTheme ? (
+            <BiMoon size={24} onClick={() => setIsLightTheme(!isLightTheme)} />
+          ) : (
+            <BiSun size={24} onClick={() => setIsLightTheme(!isLightTheme)} />
+          )}
         </button>
         <div className="notification">
           <button>
