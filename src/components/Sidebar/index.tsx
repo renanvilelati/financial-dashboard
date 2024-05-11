@@ -5,7 +5,6 @@ import { dataMenu } from '../../mock/menu';
 import { createSidebarMenu } from '../../utils/createSidebarMenu';
 import { StyledAside } from './style';
 
-
 const Sidebar = () => {
   const { sidebarIsOpen } = useGlobalContext();
 
@@ -20,10 +19,8 @@ const Sidebar = () => {
       />
 
       <nav>
-        <ul className='test'>
-          {dataMenu.map((item) => {
-            
-
+        <ul>
+          {dataMenu.map((item) => {          
             return (
               <li key={item.id}>
                 <Link to={`/${item.href}`}>
