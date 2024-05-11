@@ -7,25 +7,28 @@ import Container from '../components/Container';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import { GlobalStyle } from '../styles/global';
+import { BrowserRouter } from 'react-router-dom';
 
 const Providers = ({ children }: { children: ReactNode }) => {
   const [isLightTheme, setIsLightTheme] = useState(false);
 
   return (
     <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
-      <GlobalProvider>
-        <DashboardContextProvider>
-          <Container>
-            <Sidebar />
-            <Header
-              isLightTheme={isLightTheme}
-              setIsLightTheme={setIsLightTheme}
-            />
-            {children}
-          </Container>
-          <GlobalStyle />
-        </DashboardContextProvider>
-      </GlobalProvider>
+      <BrowserRouter>
+        <GlobalProvider>
+          <DashboardContextProvider>
+            <Container>
+              <Sidebar />
+              <Header
+                isLightTheme={isLightTheme}
+                setIsLightTheme={setIsLightTheme}
+              />
+              {children}
+            </Container>
+            <GlobalStyle />
+          </DashboardContextProvider>
+        </GlobalProvider>
+      </BrowserRouter>
     </ThemeProvider>
   );
 };

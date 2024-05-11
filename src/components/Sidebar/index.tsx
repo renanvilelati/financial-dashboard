@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Logo from '../../../public/logo.svg';
 import { useGlobalContext } from '../../contexts/GlobalContext';
 import { dataMenu } from '../../mock/menu';
@@ -25,10 +26,10 @@ const Sidebar = () => {
 
             return (
               <li key={item.id}>
-                <a href={`/${item.href}`}>
+                <Link to={`/${item.href}`}>
                   {createSidebarMenu(item.label)}
                   {sidebarIsOpen ? item.label : null}
-                </a>
+                </Link>
               </li>
             )
           } )}

@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import CardPage from './pages/cards';
 import Dashboard from './pages/dashboard/page';
 import SettingsPage from './pages/settings';
@@ -8,7 +8,6 @@ import PageNotFound from './pages/pageNotFound/page';
 
 export const AppRouter = () => {
   return (
-    <BrowserRouter>
       <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/users" element={<UsersPage />} />
@@ -17,6 +16,5 @@ export const AppRouter = () => {
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="*" element={<PageNotFound />} />
       </Routes>
-    </BrowserRouter>
   );
 };

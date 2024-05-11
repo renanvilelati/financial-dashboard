@@ -14,6 +14,7 @@ import {
 } from '../../../../mock/dashboard';
 import { useDashboardContext } from '../../../../contexts/DashboardContext';
 import SkeletonNavigation from '../../../../components/Skeleton/SkeletonNavigation';
+import { Link } from 'react-router-dom';
 
 const getIcon = (type: string) => {
   switch (type) {
@@ -111,7 +112,7 @@ const RecentTransactions = () => {
     <div className="recent-transictions">
       <div className="header">
         <h3>Recent Transactions</h3>
-        <a href="#">See all</a>
+        <Link to="#">See all</Link>
       </div>
       {mockRecentTransations.map((item: iMockRecentTransactions) => (
         <div key={item.id}>
@@ -142,13 +143,13 @@ const Navigation = () => {
   const { loading } = useDashboardContext();
 
   return loading ? (
-    <SkeletonNavigation width='100%' height='90%' />
+    <SkeletonNavigation width="100%" height="90%" />
   ) : (
     <StyledNavigation className="navigation">
       <div className="pending-payments">
         <div className="header">
           <h3>Pending Payments</h3>
-          <a href="#">See all</a>
+          <Link to="#">See all</Link>
         </div>
         <ul className="payment-list">
           {dataPendingPayments.map((item: iDataPendingPayments) => (
