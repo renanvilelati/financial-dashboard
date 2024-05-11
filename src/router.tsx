@@ -4,6 +4,7 @@ import Dashboard from './pages/dashboard/page';
 import SettingsPage from './pages/settings';
 import SupportPage from './pages/support';
 import UsersPage from './pages/users';
+import PageNotFound from './pages/pageNotFound/page';
 
 export const AppRouter = () => {
   return (
@@ -14,6 +15,7 @@ export const AppRouter = () => {
           <Route path="/cards" element={<CardPage />} />
           <Route path="/support" element={<SupportPage />} />
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
