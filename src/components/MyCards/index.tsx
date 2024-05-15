@@ -7,7 +7,7 @@ import { MdKeyboardArrowRight } from 'react-icons/md';
 import { StyledCards } from './style';
 import { useEffect, useState } from 'react';
 import Card from '../../pages/dashboard/components/Card';
-import { useDashboardContext } from '../../contexts/DashboardContext';
+import { useDashboardContext } from '../../hooks/useDashboardContext';
 
 const MyCards = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -43,6 +43,7 @@ const MyCards = () => {
           <button
             className="btn-show-password"
             onClick={() => setShowPassword(!showPassword)}
+            title='Show/hide credit card information'
           >
             {showPassword ? (
               <AiOutlineEyeInvisible size={24} />

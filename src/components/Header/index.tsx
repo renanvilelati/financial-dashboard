@@ -23,7 +23,7 @@ const Header = ({ isLightTheme, setIsLightTheme }: iHeader) => {
       </div>
 
       <div className="header-right">
-        <button>
+        <button title='Change theme'>
           {isLightTheme ? (
             <BiMoon size={24} onClick={() => setIsLightTheme(!isLightTheme)} />
           ) : (
@@ -31,7 +31,7 @@ const Header = ({ isLightTheme, setIsLightTheme }: iHeader) => {
           )}
         </button>
         <div className="notification">
-          <button>
+          <button title='Notifications'>
             <MdNotificationsNone size={24} />
           </button>
           <span></span>

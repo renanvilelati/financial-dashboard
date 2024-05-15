@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { StyledContainer } from './style';
-import { useGlobalContext } from '../../contexts/GlobalContext';
+import { useGlobalContext } from '../../hooks/useGlobalContext';
 
 interface iChildren {
   children: ReactNode;

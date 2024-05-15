@@ -42,12 +42,15 @@ export const StyledMonthlyExpensesChart = styled.div`
     font-size: 0.875rem;
     color: ${({ theme }) => theme.colors.gray};
   }
-  
-  @media ${breakpoints.md} {
 
+  @media ${breakpoints.md} {
     .recharts-responsive-container {
       position: relative;
       right: -70px;
+    }
+
+    .chart {
+      width: 90%;
     }
 
     ul {
@@ -69,5 +72,4 @@ export const StyledMonthlyExpensesChart = styled.div`
     }
     width: 100%;
   }
-
 `;

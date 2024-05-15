@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   z-index: 3;
-  padding-left: 2rem;
+  /* padding-left: 2rem; */
 
   .input-wrapper {
     width: 100%;
@@ -86,8 +86,6 @@ export const StyledHeader = styled.header`
       }
     }
 
-    input {
-    }
   }
 
   .header-right {
@@ -135,7 +133,7 @@ export const StyledHeader = styled.header`
   @media ${breakpoints.md} {
     gap: 0.5rem;
     width: 100vw;
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
 
 
     .input-wrapper {

@@ -10,7 +10,8 @@ export const StyledContainer = styled.div<iStyledContainerProps>`
   width: 100%;
   display: grid;
   column-gap: 2rem;
-  padding-right: 2rem;
+  padding: 0 1rem 0 0;
+  /* padding-right: 2rem; */
   transition: all 0.4s;
   grid-template-columns: ${({ sidebarIsOpen }) =>
       sidebarIsOpen ? `${280}px` : `${100}px`} 1fr 392px;
@@ -37,10 +38,12 @@ export const StyledContainer = styled.div<iStyledContainerProps>`
   }
 
   @media ${breakpoints.md} {
+
+    padding: 0 1rem;
+
     grid-template-rows: 100px 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
     grid-template-areas:
-      /* 'sidebar' */
       'header'
       'main'
       'navigation';

@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
 // import { api } from '../services/api';
 import { iDataCard } from '../types/Cards';
 
@@ -91,5 +91,3 @@ export const DashboardContextProvider = ({
     </DashboardContext.Provider>
   );
 };
-
-export const useDashboardContext = () => useContext(DashboardContext);

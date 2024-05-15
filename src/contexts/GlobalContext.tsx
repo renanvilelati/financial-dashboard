@@ -1,10 +1,8 @@
 import {
-  ReactNode,
   createContext,
-  useContext,
   useState,
 } from 'react';
-
+import { iChildren } from '../types/children';
 
 interface iGlobalContext {
   sidebarIsOpen: boolean;
@@ -12,15 +10,12 @@ interface iGlobalContext {
   isLightTheme: boolean;
   handleChangeTheme: () => void;
 }
-interface iGlobalProviderProps {
-  children: ReactNode;
-}
 
 export const GlobalContext = createContext<iGlobalContext>(
   {} as iGlobalContext
 );
 
-export const GlobalProvider = ({ children }: iGlobalProviderProps) => {
+export const GlobalProvider = ({ children }: iChildren) => {
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
   const [isLightTheme, setIsLightTheme] = useState(false);
 
@@ -46,4 +41,3 @@ export const GlobalProvider = ({ children }: iGlobalProviderProps) => {
   );
 };
 
-export const useGlobalContext = () => useContext(GlobalContext);

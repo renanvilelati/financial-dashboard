@@ -2,8 +2,7 @@ import styled, { css } from 'styled-components';
 import { breakpoints } from '../../../../constants/breakpoints';
 
 export const StyledNavigation = styled.div`
-  padding: 3rem;
-  /* margin: 0 2rem; */
+  padding: 1.5rem;
   border-radius: 0.5rem;
   border: 1px solid ${({theme}) => theme.colors.border};
   margin-bottom: 3rem;

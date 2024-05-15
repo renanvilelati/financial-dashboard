@@ -1,9 +1,9 @@
-import { useDashboardContext } from '../../../../contexts/DashboardContext';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { iDataCard } from '../../../../types/Cards';
 import { PatternFormat } from 'react-number-format';
+import { useDashboardContext } from '../../../../hooks/useDashboardContext';
 
 interface iFormNewCard {
   closeModal: () => void;

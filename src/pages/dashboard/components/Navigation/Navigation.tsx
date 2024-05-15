@@ -12,9 +12,9 @@ import {
   dataPendingPayments,
   iDataPendingPayments,
 } from '../../../../mock/dashboard';
-import { useDashboardContext } from '../../../../contexts/DashboardContext';
 import SkeletonNavigation from '../../../../components/Skeleton/SkeletonNavigation';
 import { Link } from 'react-router-dom';
+import { useDashboardContext } from '../../../../hooks/useDashboardContext';
 
 const getIcon = (type: string) => {
   switch (type) {

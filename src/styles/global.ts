@@ -36,9 +36,9 @@ h3 {
   font-weight: 500;
 }
 
-main {
+/* main {
   padding: 0 2rem;
-}
+} */
 
 h3 {
   font-weight: 600 !important;

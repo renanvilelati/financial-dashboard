@@ -3,11 +3,11 @@ import { PatternFormat } from 'react-number-format';
 import { StyledCardList } from '../../../../components/MyCards/style';
 import { dateFormat } from '../../../../utils/DateFormat';
 import MasterCard from '../../../../assets/images/MasterCard.svg';
-import { useDashboardContext } from '../../../../contexts/DashboardContext';
 import { iDataCard } from '../../../../types/Cards';
 import FormNewCard from './Form';
 import Modal from '../../../../components/Modal';
 import SkeletonCard from '../../../../components/Skeleton/components/SkeletonCard';
+import { useDashboardContext } from '../../../../hooks/useDashboardContext';
 
 const Card = ({ showPassword }: { showPassword: boolean }) => {
   const { cards, isOpen, loading, handleShowModal } = useDashboardContext();

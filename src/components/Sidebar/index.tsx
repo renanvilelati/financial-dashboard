@@ -1,15 +1,21 @@
 import { Link } from 'react-router-dom';
 import Logo from '../../../public/logo.svg';
-import { useGlobalContext } from '../../contexts/GlobalContext';
 import { dataMenu } from '../../mock/menu';
 import { createSidebarMenu } from '../../utils/createSidebarMenu';
 import { StyledAside } from './style';
+import OpenSidebarButton from '../Header/components/OpenSidebarButton';
+import { useGlobalContext } from '../../hooks/useGlobalContext';
 
 const Sidebar = () => {
-  const { sidebarIsOpen } = useGlobalContext();
+  const { sidebarIsOpen, handleOpenSidebar } = useGlobalContext();
 
   return (
-    <StyledAside sidebarIsOpen={sidebarIsOpen}>
+    <StyledAside sidebarIsOpen={sidebarIsOpen} data-sidebar-is-open={sidebarIsOpen}>
+
+      {
+        sidebarIsOpen && <span className='close-menu-icon'> <OpenSidebarButton size={24}  /> </span>
+      }
+
       <img
         src={Logo}
         width={54}
@@ -22,10 +28,10 @@ const Sidebar = () => {
         <ul>
           {dataMenu.map((item) => {          
             return (
-              <li key={item.id}>
+              <li key={item.id} onClick={handleOpenSidebar}>
                 <Link to={`/${item.href}`}>
                   {createSidebarMenu(item.label)}
-                  {sidebarIsOpen ? item.label : null}
+                  {sidebarIsOpen ? item.label: null}
                 </Link>
               </li>
             )

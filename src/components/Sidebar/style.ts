@@ -11,8 +11,9 @@ export const StyledAside = styled.aside<iStyledAsideProps>`
   display: flex;
   align-items: center;
   flex-direction: column;
-  z-index: 2;
-  background-color:  ${({theme}) => theme.colors.background};;
+  z-index: 99;
+  position: relative;
+  background-color: ${({ theme }) => theme.colors.background};
 
   .show {
     transform: translateY(0);
@@ -27,6 +28,7 @@ export const StyledAside = styled.aside<iStyledAsideProps>`
     padding-top: 6rem;
     width: 100%;
     height: 100%;
+    /* display: flex; */
 
     ul {
       display: flex;
@@ -51,7 +53,7 @@ export const StyledAside = styled.aside<iStyledAsideProps>`
         display: flex;
         align-items: center;
         gap: 1rem;
-        color: ${({theme}) => theme.colors.white};
+        color: ${({ theme }) => theme.colors.white};
         padding-left: ${({ sidebarIsOpen }) => (sidebarIsOpen ? 5 : 2.2)}rem;
       }
 
@@ -62,7 +64,7 @@ export const StyledAside = styled.aside<iStyledAsideProps>`
         left: 0;
         height: 100%;
         width: 4px;
-        background-color: ${({theme}) => theme.colors.primary};
+        background-color: ${({ theme }) => theme.colors.primary};
         border-radius: 0 4px 4px 0;
       }
 
@@ -73,18 +75,46 @@ export const StyledAside = styled.aside<iStyledAsideProps>`
     }
   }
 
-  @media ${breakpoints.md} {
-    margin-top: 4rem;
-    height: 100vh;
-    background-color: ${({theme}) => theme.colors.black};
+  .close-menu-icon {
     display: none;
+  }
 
-    .logo {
-      display: none;
+  @media ${breakpoints.md} {
+    background-color: ${({ theme }) => theme.colors.black};
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+    position: fixed;
+    inset: 0;
+
+    nav li:hover::after {
+      background-color: initial;
     }
 
-    nav li a {
-      padding-left: ${({ sidebarIsOpen }) => (sidebarIsOpen ? 9 : 0)}rem;
+    &[data-sidebar-is-open='true'] {
+      transform: translateX(0);
+
+      .close-menu-icon {
+        display: inline-block;
+        position: absolute;
+        right: 1.5rem;
+        top: 0.5rem;
+        padding: 2rem;
+        cursor: pointer;
+        color: ${({ theme }) => theme.colors.gray};
+      }
+
+      nav {
+        padding-top: 4rem;
+        justify-content: center;
+
+        ul {
+          padding-left: 40vw;
+        }
+
+        a {
+          padding-left: 0;
+        }
+      }
     }
 
     nav li:last-of-type {

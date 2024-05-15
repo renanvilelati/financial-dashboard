@@ -92,7 +92,7 @@ export const StyledCardList = styled.div`
   width: 300px;
   min-width: 100%;
   display: flex;
-  gap: 1.5rem;
+  gap: 0.5rem;
   overflow-x: scroll;
   justify-content: flex-start;
   padding: 1rem 0 0.5rem;

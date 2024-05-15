@@ -15,6 +15,9 @@ export const StyledDashboard = styled.main`
   }
 
   @media ${breakpoints.md} {
+    h2 {
+      font-size: 1.5rem;
+    }
     .footer-charts {
       flex-direction: column;
     }
