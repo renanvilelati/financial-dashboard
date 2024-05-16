@@ -4,10 +4,10 @@ import { darkTheme, lightTheme } from '../styles/theme';
 import { GlobalProvider } from '../contexts/GlobalContext';
 import { DashboardContextProvider } from '../contexts/DashboardContext';
 import Container from '../components/Container';
-import Sidebar from '../components/Sidebar';
-import Header from '../components/Header';
 import { GlobalStyle } from '../styles/global';
 import { BrowserRouter } from 'react-router-dom';
+import Sidebar from '../components/Layout/Sidebar';
+import Header from '../components/Layout/Header';
 
 const Providers = ({ children }: { children: ReactNode }) => {
   const [isLightTheme, setIsLightTheme] = useState(false);

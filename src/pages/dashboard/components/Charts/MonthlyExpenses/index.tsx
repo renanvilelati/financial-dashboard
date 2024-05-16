@@ -1,8 +1,8 @@
 import { Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { StyledMonthlyExpensesChart } from './style';
 import { dataMonthlyExpenses } from '../../../../../mock/dashboard';
-import SkeletonCharts from '../../../../../components/Skeleton/components/SkeletonCharts';
 import { useDashboardContext } from '../../../../../hooks/useDashboardContext';
+import SkeletonCharts from '../../../../../components/Layout/Skeleton/components/SkeletonCharts';
 
 const MonthlyExpensesChart = () => {
   const { loading } = useDashboardContext();

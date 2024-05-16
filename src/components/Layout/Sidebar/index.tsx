@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import Logo from '../../../public/logo.svg';
-import { dataMenu } from '../../mock/menu';
-import { createSidebarMenu } from '../../utils/createSidebarMenu';
+import Logo from '../../../../public/logo.svg';
 import { StyledAside } from './style';
 import OpenSidebarButton from '../Header/components/OpenSidebarButton';
-import { useGlobalContext } from '../../hooks/useGlobalContext';
+import { dataMenu } from '../../../mock/menu';
+import { createSidebarMenu } from '../../../utils/createSidebarMenu';
+import { useGlobalContext } from '../../../hooks/useGlobalContext';
 
 const Sidebar = () => {
   const { sidebarIsOpen, handleOpenSidebar } = useGlobalContext();

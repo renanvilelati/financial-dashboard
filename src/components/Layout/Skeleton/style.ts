@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { breakpoints } from '../../constants/breakpoints';
 import { ReactNode } from 'react';
+import { breakpoints } from '../../../constants/breakpoints';
 
 export const StyledSkeleton = styled.div`
   background-color: #444;

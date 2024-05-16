@@ -6,8 +6,8 @@ import MasterCard from '../../../../assets/images/MasterCard.svg';
 import { iDataCard } from '../../../../types/Cards';
 import FormNewCard from './Form';
 import Modal from '../../../../components/Modal';
-import SkeletonCard from '../../../../components/Skeleton/components/SkeletonCard';
 import { useDashboardContext } from '../../../../hooks/useDashboardContext';
+import SkeletonCard from '../../../../components/Layout/Skeleton/components/SkeletonCard';
 
 const Card = ({ showPassword }: { showPassword: boolean }) => {
   const { cards, isOpen, loading, handleShowModal } = useDashboardContext();

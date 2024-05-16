@@ -1,6 +1,6 @@
 'use client';
 import styled from 'styled-components';
-import { breakpoints } from '../../constants/breakpoints';
+import { breakpoints } from '../../../constants/breakpoints';
 
 export const StyledHeader = styled.header`
   height: 100%;

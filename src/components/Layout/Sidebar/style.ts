@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoints } from '../../constants/breakpoints';
+import { breakpoints } from '../../../constants/breakpoints';
 
 interface iStyledAsideProps {
   sidebarIsOpen: boolean;

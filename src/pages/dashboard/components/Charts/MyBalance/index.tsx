@@ -10,8 +10,8 @@ import {
 import { StyledMyBalanceChart } from './style';
 import { useTheme } from 'styled-components';
 import { dataMyBlance } from '../../../../../mock/dashboard';
-import SkeletonCharts from '../../../../../components/Skeleton/components/SkeletonCharts';
 import { useDashboardContext } from '../../../../../hooks/useDashboardContext';
+import SkeletonCharts from '../../../../../components/Layout/Skeleton/components/SkeletonCharts';
 
 const MyBalanceChart = () => {
   const { loading } = useDashboardContext();

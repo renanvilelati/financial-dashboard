@@ -1,6 +1,6 @@
 import { AiOutlineClose } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { useGlobalContext } from '../../../hooks/useGlobalContext';
+import { useGlobalContext } from '../../../../hooks/useGlobalContext';
 
 const OpenSidebarButton = ({size = 32} ) => {
   const { sidebarIsOpen, handleOpenSidebar } = useGlobalContext();

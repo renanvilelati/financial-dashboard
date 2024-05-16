@@ -1,8 +1,8 @@
 import { useTheme } from 'styled-components';
 import { StyledMySalesChart } from './style';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import SkeletonCharts from '../../../../../components/Skeleton/components/SkeletonCharts';
 import { useDashboardContext } from '../../../../../hooks/useDashboardContext';
+import SkeletonCharts from '../../../../../components/Layout/Skeleton/components/SkeletonCharts';
 
 const MySalesChart = () => {
   const theme = useTheme();
